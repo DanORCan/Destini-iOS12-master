@@ -45,10 +45,7 @@ class ViewController: UIViewController {
         
         
         // TODO Step 3: Set the text for the storyTextView, topButton, bottomButton, and to T1_Story, T1_Ans1, and T1_Ans2
-        storyTextView.text = story1 //=1
-        topButton.setTitle(answer1a, for: .normal)
-        bottomButton.setTitle(answer1b, for: .normal)
-        storyIndex = 1
+        startReset()
     }
 
     
@@ -92,5 +89,12 @@ class ViewController: UIViewController {
                 
     }
     
+    func startReset(){
+        storyTextView.text = story1 //=1
+        topButton.setTitle(answer1a, for: .normal)
+        bottomButton.setTitle(answer1b, for: .normal)
+        storyIndex = 1
+
+    }
 }
 
