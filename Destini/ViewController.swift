@@ -12,7 +12,7 @@ import UIKit
 class ViewController: UIViewController {
 
     // Our strings
-    let story1 = "Your car has blown a tire on a winding road in the middle of nowhere with no cell phone reception. You decide to hitchhike. A rusty pickup truck rumbles to a stop next to you. A man with a wide brimmed hat with soulless eyes opens the passenger door for you and asks: \"Need a ride, boy?\"."
+    let story1 = "BEGINING:  Your car has blown a tire on a winding road in the middle of nowhere with no cell phone reception. You decide to hitchhike. A rusty pickup truck rumbles to a stop next to you. A man with a wide brimmed hat with soulless eyes opens the passenger door for you and asks: \"Need a ride, boy?\"."
     let answer1a = "I\'ll hop in. Thanks for the help!"
     let answer1b = "Better ask him if he\'s a murderer first."
     
@@ -35,6 +35,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var topButton: UIButton!         // Has TAG = 1
     @IBOutlet weak var bottomButton: UIButton!      // Has TAG = 2
     @IBOutlet weak var storyTextView: UILabel!
+    @IBOutlet weak var resetButton: UIButton!      // default is hidden
     
     // TODO Step 5: Initialise instance variables here
     //index variable to track location in story
@@ -45,6 +46,7 @@ class ViewController: UIViewController {
         
         
         // TODO Step 3: Set the text for the storyTextView, topButton, bottomButton, and to T1_Story, T1_Ans1, and T1_Ans2
+        
         startReset()
     }
 
@@ -69,28 +71,39 @@ class ViewController: UIViewController {
             storyTextView.text = story6
             topButton.isHidden = true //topButton.setTitle("End of Story", for: .normal)
             bottomButton.isHidden = true //bottomButton.setTitle("End of Story", for: .normal)
+            resetButton.isHidden = false
             storyIndex = 6
         } else if sender.tag == 2 && storyIndex == 3 { //3b & 3 = 5
             storyTextView.text = story5
             topButton.isHidden = true //topButton.setTitle("End of Story", for: .normal)
             bottomButton.isHidden = true //bottomButton.setTitle("End of Story", for: .normal)
+            resetButton.isHidden = false
             storyIndex = 5
-//        } else if sender.tag == 1 && storyIndex == 2 { //2a & 2 = 3
-//            storyTextView.text = story3
-//            topButton.setTitle(answer3a, for: .normal)
-//            bottomButton.setTitle(answer3b, for: .normal)
-//            storyIndex = 3
         } else if sender.tag == 2 && storyIndex == 2 { //2b & 2 = 4
             storyTextView.text = story4
             topButton.isHidden = true //topButton.setTitle("End of Story", for: .normal)
             bottomButton.isHidden = true //bottomButton.setTitle("End of Story", for: .normal)
+            resetButton.isHidden = false
             storyIndex = 4
         }
                 
     }
     
+    // user resets story
+    
+    @IBAction func resetPressed(_ sender: UIButton) {
+        
+        resetButton.isHidden = true
+        topButton.isHidden = false
+        bottomButton.isHidden = false
+        startReset()
+        
+    }
+    
+    
     func startReset(){
-        storyTextView.text = story1 //=1
+        
+        storyTextView.text = story1 
         topButton.setTitle(answer1a, for: .normal)
         bottomButton.setTitle(answer1b, for: .normal)
         storyIndex = 1

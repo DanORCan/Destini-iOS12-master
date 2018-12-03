@@ -59,13 +59,16 @@
                                     <action selector="buttonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="17E-TM-9cz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAO-9M-4fp">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAO-9M-4fp">
                                 <rect key="frame" x="110" y="426" width="154" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="28"/>
                                 <state key="normal" title="RESET">
                                     <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="resetPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qpR-bG-dYv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -87,6 +90,7 @@
                     </view>
                     <connections>
                         <outlet property="bottomButton" destination="YYD-qC-cgr" id="oTr-dl-hKK"/>
+                        <outlet property="resetButton" destination="TAO-9M-4fp" id="rwD-gG-89t"/>
                         <outlet property="storyTextView" destination="amk-E0-c5D" id="TU8-d8-Hye"/>
                         <outlet property="topButton" destination="u0E-Z6-us4" id="Dfm-eR-Gan"/>
                     </connections>
